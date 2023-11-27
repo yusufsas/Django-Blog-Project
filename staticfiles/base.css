@@ -1,0 +1,64 @@
+
+body{
+    background-color:white;
+    font-family: 'Playfair Display', serif;
+    font-weight:bold;
+}
+
+
+img{
+    width: 100%;
+}
+.navbg{
+    
+    
+     background-image: linear-gradient(to bottom right, #311e3e, #2c1f35);
+      
+}
+.post-image{
+    width: 100%;
+    height: 32em;
+    object-fit: cover;
+}
+.postlist-img{
+    border-radius: 4px;
+}
+.card{
+    border: 1px solid transparent;
+    border-radius: 0;
+    list-style: none;
+    padding: 0.8em;
+    
+    animation-delay: 2s;
+}
+.card:hover{
+    border: 1px solid  rgb(207, 207, 207);
+}
+.searchingbox{
+    background-color: whitesmoke;
+    border-radius: 2px;
+    margin-left: 1em;
+}
+.searchingbutton{
+    border-radius: 2px;
+}
+.card .row a{
+    font-size: 1.3em;
+    font-weight: bolder;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+.content-title{
+    font-size: 3.5em;
+}
+h5{
+    font-size: x-small;
+}
+.content{
+    font-size: 1.3em;
+    font-weight: 300;
+    line-height: 1.75em;
+    letter-spacing: 0.05em;
+}
+

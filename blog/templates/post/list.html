@@ -1,0 +1,46 @@
+{%extends "base.html"%}
+
+ {%block title%}list{%endblock%}
+
+
+
+
+{%block categories%}
+{%for category in categories%}
+ <li class="nav-item">
+   <a class="nav-link"  href="{{category.get_absolute_url}}">{{category.name}}</a>
+ </li>
+ 
+ {%endfor%}
+ {%endblock%}
+
+ {%block content%}
+
+    {% for post in posts %}
+
+    <div class="card mb-3">
+      <div class="row">
+          <div class="col-md-3 b">
+              <img src="{{post.image.url}}" alt="" class="img-fluid postlist-img">
+          </div>
+          <div class="col-md-9">
+              <div class="card-body">
+                  <h1 class="card-title">
+                        <a href="{{post.get_absolute_url}}">{{post.title|title}}</a>
+                  </h1>
+                  <h5 class="card-text">
+                      {{post.publish}}
+                  </h5>
+
+              </div>
+          </div>
+      </div>
+  </div>
+ 
+
+
+    {%endfor%}
+
+    {%include 'pagination.html' with page=posts%}
+
+ {%endblock%}

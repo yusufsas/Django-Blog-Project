@@ -1,0 +1,73 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}{%endblock%}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'base.css'%}">
+</head>
+<body>
+
+
+<nav class="navbar navbar-dark bg-secondary navbar-expand-lg navbg">
+    <div class="container">
+        <a href="{% url 'post:post_list' %}" class="navbar-brand">sas</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {%block categories%}
+                {%endblock%}
+                <form class="d-flex" method=POST role="search" action="{% url 'blog:search' %}">
+                    {%csrf_token%}
+                    <input class="form-control me-2 searchingbox" type="search" placeholder="Search" aria-label="Search" name="searched">
+                    <button class="btn btn-outline-light searchingbutton" type="submit">Search</button>
+                  </form>
+            </ul>
+    </div>
+    </div>
+</nav>
+
+<div class="m-2">
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <!-- <div class="col-3">
+            <div class="list-group">
+                <a href="" class="list-group-item list-group-item-action">test</a>
+                <a href="" class="list-group-item list-group-item-action">test</a>
+                <a href="" class="list-group-item list-group-item-action">test</a>
+            </div>
+        </div> -->
+        <div class="col-12">
+            
+                {%block content%}
+
+                {% endblock %}
+        </div>
+    </div>
+</div>
+<div class="content">
+
+  
+
+</div>
+
+<p>
+    <a href="{% url 'blog:post_feed' %}">Subscribe to my RSS feed</a>
+    <a href="{%url 'blog:about'%}" class="text-decoration-none">About</a>
+</p>
+
+    
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="{%static 'base.js'%}"></script>
+</body>
+</html>

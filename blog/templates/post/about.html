@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+
+
+{%block title%}about {%endblock%}
+
+
+{%block categories%}
+{%for category in categories%}
+ <li class="nav-item">
+   <a class="nav-link"  href="{{category.get_absolute_url}}">{{category.name}}</a>
+ </li>
+ 
+ {%endfor%}
+ {%endblock%}
+
+
+ {%block content%}
+ <img src="#" alt="" class="post-image">
+<h1 class="content-title my-4 mx-1 mb-5">Yusuf ŞAŞ</h1>
+<p class="content mx-2">Kocaeli Üniversitesi Bilgisayar Mühendisliği 2025 mezunuyum. İstanbul'da yaşıyorum. Yapay Zeka ve Gömülü Sistemler gibi alanlara ek olarak django web uygulamaları ile ilgileniyorum. Aktif olarak Python, Java ve C dillerini ve dillerin frameworklerini kullanıyorum. Aşağıdaki linkler aracılığıyla bana ulaşabilirsiniz.
+<hr>
+
+<a href="www.linkedin.com/in/
+yusuf-şaş-736227225
+" class="text-decoration-none d-flex ">linkedin</a>
+<a href="https://github.com/yusufsas" class="text-decoration-none d-flex">github</a>
+<a href="https://www.instagram.com/_yusufsas/" class="text-decoration-none d-flex">instagram</a>
+</p>
+
+ {%endblock%}
